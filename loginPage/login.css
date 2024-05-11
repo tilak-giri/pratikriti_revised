@@ -1,0 +1,134 @@
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Basic grid layout of the page
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+:root{
+    --primaryColor : #4CAF50;
+    --hoverColor : #45a049;
+    --grayColor : #333;
+}
+
+.container{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 5fr 0.6fr;
+    grid-template-areas:
+    "one"
+    "two"
+    "three";
+}
+.header{
+    grid-area: one;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.heroSection{
+    grid-area: two;
+    /* background-color: blue; */
+}
+.footer{
+    grid-area: three;
+}
+
+body{
+    background-image: url(/images/background.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Header section css
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.header img{
+    margin-left: 1rem;
+    height: 20vh;
+    align-self:flex-start; 
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+heroSection css start
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.heroSection{
+    display: flex;
+    justify-content: space-between;
+}
+
+.textArea{
+    /* background-color: rebeccapurple; */
+    margin-left: 1rem;
+    width: 50%;
+    /* text-align: center; */
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.textArea button{
+    margin-top: 1rem;
+    height: 45px;
+    width: 130px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: var(--primaryColor);
+}
+
+.imageArea img{
+    height: 400px;
+    mix-blend-mode: color-burn;
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+footer section css
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--grayColor);
+}
+.footer a{
+    margin-left: 2rem;
+    color: white;
+}
+
+/*\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+login section css
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*/
+
+.textArea p{
+    font-size: 2rem;
+    font-weight: bolder;
+    /* color: var(--grayColor); */
+    text-shadow: 1px 3px 6px var(--hoverColor);
+
+}
+.textArea form{
+    display: flex;
+    flex-direction: column;
+}
+.textArea form input{
+    height: 1.5rem;
+    width: 20rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 0.15rem solid var(--primaryColor);
+    box-shadow: 0 4px 6px -1px var(--primaryColor); /* Shadow with 50% opacity */
+
+}
+
+.textArea form input:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 4px 6px -1px var(--hoverColor); /* Add a custom box shadow when focused */
+
+}
